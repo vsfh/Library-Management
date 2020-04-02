@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读者界面</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/register-login.css">
+    <link rel="icon" href="../static/images/logo.ico" type="image/x-icon"/>
+    <style>
+        .a{
+            width: 100%;
+            height: 30px;
+            text-align: center;
+        }
+        #b{
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div style = 'text-align: center;'><font color="#4169E1" size="10">已借图书</font></div>
+<div class="a">
+    <table style = 'text-align: center; width: 100%' border='1'>
+        <tr><th>书号</th><th>应还日期</th>
+        {% for message in result %}
+            <tr><td>{{  message[1]  }}</td><td>{{ message[2] }}</td></tr>
+        {% endfor %}
+    </table>
+    <br/>
+    <div class="app">
+
+    <div style="display:inline-block;"> <a href="{{ url_for('bookSearch') }}"><button type="submit" class="login-btn register-btn" id="button", style="width: 150px">查询图书</button></a></div>
+
+    </div>
+    <br/>
+</div>
+</body>
+</html>
